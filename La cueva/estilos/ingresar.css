@@ -17,19 +17,18 @@ body{
     position: absolute;
     height: 100%;
     width: 100%;
-    border: 2px solid black;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(140px, 1fr));
 }
 .item{
     background: transparent;
-    border: 1px solid rgba(0, 0, 0, 0.377);
+    border: 1px solid rgba(78, 77, 77, 0.849);
     transition: all 0.7s cubic-bezier(0.3, 1, 0.1, 1);
-    border-radius: 20px;
+    border-radius: 15px;
 }
 .item:hover{
-    background-color: #2102078e;
+    background-color: #530613;
     transform: scale(1.05); /* Va a saltar rápido y acomodarse suavemente al final */
     box-shadow: 0 0 15px #140f17b4;
 }
@@ -45,11 +44,9 @@ body{
     background-color: #730C1E;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 150px rgb(20, 19, 19);
+    box-shadow: 0 0 200px rgb(0, 0, 0);
 }
 .container-form{
- 
     width: 100%;
     overflow: hidden;
 }
