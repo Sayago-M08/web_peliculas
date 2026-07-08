@@ -6,21 +6,36 @@ $correo = $_POST['correo'];
 $password = $_POST['password'];
 
 
-$sql_verificacion = "SELECT * FROM cuenta";
+$sql_verificacion = "SELECT * FROM cuenta WHERE correo = '$correo'";
 $verificar = $conexion->query($sql_verificacion);
 
 $datos = $verificar->fetch_assoc();
 
 
 if($verificar && $verificar->num_rows >0){
+
     if($correo == $datos['correo'] && $password == $datos["contraseña"]){
-        session_start();
-        $_SESSION['user'] = $datos['id_cuenta'];
-        $_SESSION['name'] = $datos['nombre_usuario']
+        if($datos['id_rol'] == 1){
+           session_start();
+            $_SESSION['user'] = $datos['id_cuenta'];
+            $_SESSION['name'] = $datos['nombre_usuario']; 
+            ?>
+            <script>
+            window.location.href = "../admin/vista_admin.php";
+            </script>
+    <?php
+        }
+        else{
+            session_start();
+            $_SESSION['user'] = $datos['id_cuenta'];
+            $_SESSION['name'] = $datos['nombre_usuario']; 
+            ?>
+            <script>
+            window.location.href = "../La cueva/perfiles.php";
+            </script>
+    <?php
+        }
     ?>
-    <script>
-    window.location.href = "../La cueva/peliculas_usuario.php";
-    </script>
 
         <?php
         }

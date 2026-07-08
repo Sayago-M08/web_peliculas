@@ -27,14 +27,7 @@ $resultado = $conexion->query($sql);
                 <h2>LA CUEVA</h2>
             </div>
             <div class="nav-link">
-                <form action="" class="form-nav">
-                    <input type="text" class="buscar" placeholder="Buscar...">
-                    <input type="submit" value="buscar" class="btn-buscar">
-                </form>
-                <ul>
-                    <li><a href="./peliculas.html">Inicio</a></li>
-                    <li><a href="#">Mi peliculas    </a></li>
-                </ul>
+
             </div>
             <div class="nav-datos">
                 <button class="nav-usuario"> <a href="./ingresar.php">Inicio de sesion</a></button>
@@ -50,15 +43,7 @@ $resultado = $conexion->query($sql);
                 </video> 
         </header>
         <main class="swiper mySwiper">
-            <ul>
-                <li>Accion</li>
-                <li>Comedia</li>
-                <li>Terror</li>
-                <li>Suspenso</li>
-                <li>Romantica</li>
-                <li>Dramatica</li>
-            </ul>
-            <h2>Reconmendadas</h2>
+            <h2>Todas</h2>
             <div class="swiper-wrapper">
                 <?php while($pelicula = $resultado->fetch_assoc()){ ?>
                 <div class="swiper-slide">  
@@ -71,6 +56,7 @@ $resultado = $conexion->query($sql);
                 </div>
                 <?php }?>
             </div>  
+            
     </main>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>

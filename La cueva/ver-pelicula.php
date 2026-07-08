@@ -2,8 +2,8 @@
 require_once '../consultas/conexion.php';
 require_once '../consultas/validar_sesion.php';
 
-$id_pelicula = $_GET['id_pelicula'];
-
+$id_pelicula = $_POST['id_pelicula'];
+$contenido = $_POST['id_contenido'];
 $sql = "SELECT
 pelicula.*,
 
@@ -32,7 +32,7 @@ GROUP BY pelicula.id_pelicula
 $resultado = $conexion->query($sql);
 
 
-$sql_peliculas = "SELECT * FROM pelicula WHERE id_pelicula !='$id_pelicula'";
+$sql_peliculas = "SELECT * FROM pelicula WHERE id_pelicula !='$id_pelicula' AND pelicula.id_contenido ='$contenido'";
 
 $resultado_peliculas = $conexion->query($sql_peliculas);
 ?>

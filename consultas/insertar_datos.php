@@ -8,6 +8,7 @@ $id_director = $_POST['id_director'];
 $duracion = $_POST['duracion'];
 $descripcion = $_POST['descripcion'];
 $saga = $_POST['saga'];
+$id_contenido = $_POST['id_contenido'];
 
 $foto_destino    = "../consultas/fotos/" . time() . "_" . $_FILES['foto']['name'];
 $pelicula_destino   = "../consultas/videos/" . time() . "_" . $_FILES['pelicula']['name'];
@@ -21,8 +22,8 @@ $trailer_movido = move_uploaded_file($_FILES['trailer']['tmp_name'], $trailer_de
 if ($foto_movida && $video_movida && $trailer_movido) {
 
 
-    $sql = "INSERT INTO pelicula (nombre, saga, duracion, descripcion, trailer_url, pelicula_url, foto_url) 
-    VALUES ('$nombre', '$saga', '$duracion', '$descripcion', '$trailer_destino', '$pelicula_destino', '$foto_destino')";
+    $sql = "INSERT INTO pelicula (nombre, saga, duracion, descripcion,id_contenido, trailer_url, pelicula_url, foto_url) 
+    VALUES ('$nombre', '$saga', '$duracion', '$descripcion','$id_contenido', '$trailer_destino', '$pelicula_destino', '$foto_destino')";
     $conexion->query($sql);
     
     $id_pelicula_creada = $conexion->insert_id;

@@ -1,4 +1,11 @@
+<?php
+session_start();
+require_once '../consultas/conexion.php';
 
+$sql = "SELECT * FROM plan";
+$plan = $conexion->query($sql);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,6 +105,15 @@
                 <div class="container-input">
                     <i class="bi bi-envelope"></i>
                     <input type="email" placeholder="Email" name="correo">
+                </div>
+                <div class="container-input">
+                    <i class="bi bi-piggy-bank"></i>
+                    <p class="elija">Elijan un plan</p>
+                <select name="id_plan" id="">
+                    <?php while($resultado = $plan->fetch_assoc()){ ?>
+                <option value="<?= $resultado['id_plan']?>"><?= $resultado['nombre']?></option>
+                <?php }?>
+            </select>
                 </div>
                 <div class="container-input">
                     <i class="bi bi-eye-slash"></i>

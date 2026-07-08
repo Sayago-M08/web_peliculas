@@ -111,6 +111,19 @@ body{
     background-color: #140f171e;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.521);
 }
+.container-input select{
+    background-color: #480415;
+    color: white;
+    font-size: 18px;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    border-bottom: 1px solid white;
+}
+.elija{
+    color: rgb(255, 255, 255);
+    opacity: 0.9;
+}
 ::placeholder{
     text-align: center;
     color: rgba(255, 255, 255, 0.781);
