@@ -1,5 +1,7 @@
 <?php
 require_once '../consultas/conexion.php';
+require_once '../consultas/validar_sesion.php';
+$nombre = $_SESSION['name'];
 
 $sql = "SELECT * FROM genero ";
 
@@ -16,6 +18,7 @@ $resultado_director = $conexion->query($sql_director);
 $sql = "SELECT * FROM contenido ";
 
 $contenido = $conexion->query($sql);
+
 ?>
 
 
@@ -28,6 +31,29 @@ $contenido = $conexion->query($sql);
     <link rel="stylesheet" href="../La cueva/estilos/agregar.css">
 </head>
 <body>
+
+
+            <nav class="nav">
+            <div class="nav-logo">
+                <h2>LA CUEVA</h2>
+            </div>
+            <div class="nav-link">
+                <!-- Agregar el buscador -->
+                <!-- <form action="" class="form-nav">
+                    <input type="text" class="buscar" placeholder="Buscar..." >
+                    <input type="submit" value="buscar" class="btn-buscar">
+                </form> -->
+                <ul>
+                    <li><a href="./vista_admin.php">Inicio</a></li>
+                    <li><a href="../consultas/cerrar_sesion.php">Cerrar sesion aqui</a></li>
+                </ul>
+            </div>
+            <div class="nav-datos">
+                <h2>
+                    Bienvenido <?= $nombre?>
+                </h2>    
+            </div>
+        </nav>
 
     <form class="form-agregar" action="../consultas/insertar_datos.php" method="POST" enctype="multipart/form-data">
         <h2 class="titulo-form">Agrega tu pelicula</h2>

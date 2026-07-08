@@ -9,8 +9,117 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: #210207;
     color: white;
-    padding: 40px 20px;
+    padding: 0 20px;
 }
+
+/* navegador */
+    .nav{
+        height: 50px;
+        margin: 20px;
+        padding: 10px;
+        border-radius: 20px;
+        background: linear-gradient(to left,#730c1e, #210207);
+        border: 1px solid rgba(255, 255, 255, 0.37);
+        display: flex;
+        box-shadow: 0 0 10px rgba(128, 128, 128, 0.452);
+        position: sticky;
+        top: 20px;
+        overflow: hidden;
+        z-index: 2;
+        transition: all 1000ms ease;
+    }
+    .nav-logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-link{
+        display: flex;
+        margin: 10px;
+        align-items: center;
+        margin: auto;
+    }
+    .nav-link ul{
+        display: flex;
+        gap: 20px;
+        margin-right: 20px;
+        margin-left: 100px;
+        list-style: none;
+        font-size: 17px;
+    }
+    .nav-link ul li{
+        transition: all 1000ms ease;
+    }
+    .nav-link ul li a{
+        color: white;
+        text-decoration: none;
+    }
+    .nav-link ul li:hover{
+        text-shadow: 0 0 10px white;
+        transform: translateY(-5px);
+        cursor: pointer;
+    }
+    .form-nav{
+        padding: 0;
+        display: flex;
+    }
+    .btn-buscar{
+        padding: 7px;
+        background: transparent;
+        border: 2px solid #ccc;
+        color: white;
+        border-radius: 0px 5px 5px 0px;
+        border-left: none;
+        background-color: #792432;
+    }
+    .buscar{
+        background-color: #ffffff;
+        border: 2px solid #730c1e;
+        border-right: none;
+        margin-right: 0px;
+        height: 10px;
+        background: transparent;
+        color: #ccc;
+    }
+    .buscar {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px 0px 0px 5px;
+    outline: none;
+    transition: all 0.3s ease;
+        border-right: none; 
+    }
+
+
+    .buscar:focus {
+        color: white;
+        box-shadow: 0 0 30px rgba(143, 166, 182, 0.3); 
+    }
+    .nav-usuario{
+        background-color: #210207;
+        color: white;
+        border: none;
+        border-bottom: 1px solid  rgba(255, 255, 255, 0.685);
+        height: 40px;
+        width: 150px;
+        border-radius: 10px;
+        font-size: 20px;
+        transition: all 1000ms ease;
+    }
+    .nav-usuario:hover{
+        box-shadow: 0 0 15px white;
+        border-bottom: 3px solid  rgba(255, 255, 255, 0.685);
+        cursor: pointer;
+    }
+    .nav-usuario a{
+        text-decoration: none;
+        color: white;
+    }
+    .nav-datos{
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+    }
 
 /* contenedor principal del formulario, mismo lenguaje visual que .descripcion */
 .form-agregar{

@@ -53,7 +53,6 @@ $resultado = $perfil->fetch_assoc()
             </div>
             <div class="nav-datos">
                 <h2>
-
                     Bienvenido <?= $resultado['nombre']?>
                 </h2>    
             </div>
